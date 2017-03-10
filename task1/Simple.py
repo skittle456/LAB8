@@ -30,7 +30,29 @@ class Simple(QWidget):
         p.drawImage(QRect(200,100,320,320), self.rabbit)
         p.end()
 
+class Simple1(Simple):
+    def __init__(self):
+        super().__init__()
+        
+    def paintEvent(self, e):
+        p = QPainter()
+        p.begin(self)
 
+        p.setPen(QColor(0,0,0))
+        p.setBrush(QColor(0,127,0))
+
+        p.setPen(QColor(0,0,0))
+        p.setBrush(QColor(0,127,0))
+        p.drawPolygon([QPoint(70,100) , QPoint(100,110), QPoint(130,100),QPoint(100,150)])
+
+        p.setPen(QColor(255,127,0))
+        p.setBrush(QColor(255,127,0))
+        p.drawPie(50,150,100,100,0,180*16)
+
+        p.drawPolygon([QPoint(750,200),QPoint(150,200),QPoint(100,400)])
+
+        p.drawImage(QRect(200,100,320,320), self.rabbit)
+        p.end()
 
 class Simple2(Simple):
     def __init__(self):
@@ -82,4 +104,16 @@ class Simple3(QWidget):
         p.drawImage(QRect(200,100,320,320),self.rabbit)
         p.drawImage(QRect(520,100,320,320),self.rabbit)
         p.end()
+
+app = QApplication(sys.argv)
+s1  =Simple1()
+s2 = Simple2()
+s3 = Simple3()
+
+s1.show()
+s2.show()
+s3.show()
+
+app.exec_()
+
 
