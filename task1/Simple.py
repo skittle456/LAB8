@@ -30,9 +30,6 @@ class Simple(QWidget):
         p.drawImage(QRect(200,100,320,320), self.rabbit)
         p.end()
 
-'''
-class Simple1(Simple):
-'''
 
 
 class Simple2(Simple):
@@ -55,10 +52,6 @@ class Simple2(Simple):
 
         p.drawImage(QRect(200,100,320,320), self.rabbit)
         p.end()    
-
-'''
-class Simple3(Simple):
-'''
 
 app = QApplication(sys.argv)
 
